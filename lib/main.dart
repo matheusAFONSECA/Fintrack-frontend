@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_c214/View/register_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,23 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(),
+      debugShowCheckedModeBanner: false,
       routes: {'/': (context) => RegisterPage()},
       initialRoute: '/',
     );
-  }
-}
-
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
-
-  @override
-  State<RegisterPage> createState() => _RegisterPageState();
-}
-
-class _RegisterPageState extends State<RegisterPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
   }
 }
