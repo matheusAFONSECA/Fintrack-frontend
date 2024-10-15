@@ -1,16 +1,16 @@
 // ignore_for_file: prefer_const_constructors
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatelessWidget {
-  RegisterPage({super.key});
+class LoginScreen extends StatelessWidget {
+  LoginScreen({super.key});
 
-  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  void register(String name, String email, String password) {}
+  void login(String email, String password) {}
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class RegisterPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.52,
+                  height: MediaQuery.of(context).size.height * 0.35,
                   decoration: BoxDecoration(
                       color: Color.fromARGB(255, 255, 255, 255),
                       borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -44,41 +44,7 @@ class RegisterPage extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'XicoCoin',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                            'Olá, crie sua conta preenchendo os campos abaixo:'),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextField(
-                          controller: _nameController,
-                          decoration: InputDecoration(
-                            icon: Icon(
-                              Icons.person,
-                              color: Colors.black,
-                            ),
-                            hintText: 'Coloque seu nome aqui',
-                            hintStyle: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w300),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                  Radius.circular(15.0)), // Borda arredondada
-                              borderSide: BorderSide(
-                                color: Colors.black, // Cor branca
-                                width: 1.0,
-                              ),
-                            ),
-                          ),
-                          style: TextStyle(color: Colors.black), // Cor do texto
-                        ),
+                        child: Text('Faça seu login abaixo:'),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -116,6 +82,7 @@ class RegisterPage extends StatelessWidget {
                             ),
                             hintText: 'Coloque sua senha aqui',
                             hintStyle: TextStyle(
+                                color: Colors.black,
                                 fontWeight: FontWeight.w300),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.all(
@@ -137,9 +104,12 @@ class RegisterPage extends StatelessWidget {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                           child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                login(_emailController.text,
+                                    _passwordController.text);
+                              },
                               child: Text(
-                                'Cadastrar',
+                                'Login',
                                 style: TextStyle(color: Colors.white),
                               )),
                         ),
@@ -149,7 +119,7 @@ class RegisterPage extends StatelessWidget {
                 ),
               ),
               Text(
-                'Já possui login?',
+                'Não possui conta?',
                 style: TextStyle(color: Colors.white),
               ),
               Padding(
@@ -160,11 +130,10 @@ class RegisterPage extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: TextButton(
                       onPressed: () {
-                        register(_nameController.text, _emailController.text,
-                            _passwordController.text);
+                        Navigator.pushNamed(context, '/login');
                       },
                       child: Text(
-                        'Fazer login',
+                        'Criar conta',
                         style:
                             TextStyle(color: Color.fromARGB(255, 43, 75, 26)),
                       )),
