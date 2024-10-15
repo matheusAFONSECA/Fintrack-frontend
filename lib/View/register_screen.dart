@@ -116,7 +116,6 @@ class RegisterPage extends StatelessWidget {
                             ),
                             hintText: 'Coloque sua senha aqui',
                             hintStyle: TextStyle(
-                                color: Colors.black,
                                 fontWeight: FontWeight.w300),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.all(
