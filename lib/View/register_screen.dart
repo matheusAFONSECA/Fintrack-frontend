@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -80,7 +82,7 @@ class RegisterPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
-                          controller: _nameController,
+                          controller: _emailController,
                           decoration: InputDecoration(
                             icon: Icon(
                               Icons.message_rounded,
@@ -105,7 +107,7 @@ class RegisterPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
-                          controller: _nameController,
+                          controller: _passwordController,
                           decoration: InputDecoration(
                             icon: Icon(
                               Icons.lock,
@@ -157,7 +159,9 @@ class RegisterPage extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/login');
+                      },
                       child: Text(
                         'Fazer login',
                         style:
