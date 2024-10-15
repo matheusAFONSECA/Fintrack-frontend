@@ -10,6 +10,8 @@ class LoginScreen extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  void login(String email, String password) {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,7 +104,10 @@ class LoginScreen extends StatelessWidget {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                           child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                login(_emailController.text,
+                                    _passwordController.text);
+                              },
                               child: Text(
                                 'Login',
                                 style: TextStyle(color: Colors.white),

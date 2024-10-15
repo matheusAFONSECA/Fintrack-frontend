@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -10,6 +9,8 @@ class RegisterPage extends StatelessWidget {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  void register(String name, String email, String password) {}
 
   @override
   Widget build(BuildContext context) {
@@ -160,7 +161,8 @@ class RegisterPage extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/login');
+                        register(_nameController.text, _emailController.text,
+                            _passwordController.text);
                       },
                       child: Text(
                         'Fazer login',
