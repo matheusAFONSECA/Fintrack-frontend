@@ -105,6 +105,7 @@ class LoginScreen extends StatelessWidget {
                                   BorderRadius.all(Radius.circular(10))),
                           child: TextButton(
                               onPressed: () {
+                                Navigator.pushNamed(context, '/pieChart');
                                 login(_emailController.text,
                                     _passwordController.text);
                               },
