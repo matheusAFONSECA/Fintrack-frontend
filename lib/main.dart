@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_c214/View/login_screen.dart';
+import 'package:projeto_c214/View/pie_chart.dart';
 import 'package:projeto_c214/View/register_screen.dart';
 
 void main() {
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => RegisterPage(),
-        '/login': (context) => LoginScreen()
+        '/login': (context) => LoginScreen(),
+        '/pieChart': (context) => PieChartScreen()
       },
       initialRoute: '/',
     );
