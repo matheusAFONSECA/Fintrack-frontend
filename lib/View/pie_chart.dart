@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 class PieChartScreen extends StatefulWidget {
@@ -23,15 +22,15 @@ class _PieChartScreenState extends State<PieChartScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Os seus gastos estão listados abaixo:'),
+          const Text('Os seus gastos estão listados abaixo:'),
           PieChart(dataMap: dataMap),
           Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.purple,
                   borderRadius: BorderRadius.all(Radius.circular(10))),
               child: TextButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'Adicionar novo gasto',
                     style: TextStyle(color: Colors.white),
                   )))
