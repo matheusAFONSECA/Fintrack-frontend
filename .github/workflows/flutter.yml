@@ -18,11 +18,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Remove Flutter and Pub cache
-        run: |
-          rm -rf $HOME/.pub-cache
-          rm -rf $HOME/.flutter
-
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
