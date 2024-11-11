@@ -1,6 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -115,8 +113,7 @@ class RegisterPage extends StatelessWidget {
                               color: Colors.black,
                             ),
                             hintText: 'Coloque sua senha aqui',
-                            hintStyle: TextStyle(
-                                fontWeight: FontWeight.w300),
+                            hintStyle: TextStyle(fontWeight: FontWeight.w300),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.all(
                                   Radius.circular(15.0)), // Borda arredondada

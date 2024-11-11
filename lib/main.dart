@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => RegisterPage(),
         '/login': (context) => LoginScreen(),
-        '/pieChart': (context) => PieChartScreen()
+        '/pieChart': (context) => const PieChartScreen()
       },
       initialRoute: '/',
     );
