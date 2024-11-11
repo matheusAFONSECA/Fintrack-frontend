@@ -3,7 +3,7 @@ name: Flutter CI
 on:
   push:
     branches:
-      - main  # Defina as branches nas quais o workflow será executado
+      - main
       - dev
   pull_request:
     branches:
@@ -12,22 +12,27 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # Use a última versão do Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3  # Baixa o código do repositório
+        uses: actions/checkout@v3
+
+      - name: Remove Flutter and Pub cache
+        run: |
+          rm -rf $HOME/.pub-cache
+          rm -rf $HOME/.flutter
 
       - name: Set up Flutter
-        uses: subosito/flutter-action@v2  # Instala o Flutter no ambiente
+        uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.13.0'
+          flutter-version: '3.13.0'  # Versão do Flutter que inclui Dart 3.3.2
 
       - name: Disable analytics
-        run: flutter config --no-analytics  # Desativa o Google Analytics no Flutter
+        run: flutter config --no-analytics
 
       - name: Install dependencies
-        run: flutter pub get  # Baixa as dependências do projeto
+        run: flutter pub get
 
       - name: Run tests
-        run: flutter test  # Executa os testes do Flutter
+        run: flutter test
