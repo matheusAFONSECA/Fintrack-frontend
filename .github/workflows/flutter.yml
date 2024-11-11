@@ -26,10 +26,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.4'  # Versão do Flutter que inclui Dart 3.3.2
-
-      - name: Disable analytics
-        run: flutter config --no-analytics
+          flutter-version: '3.24.4'
 
       - name: Install dependencies
         run: flutter pub get
