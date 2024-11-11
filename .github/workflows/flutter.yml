@@ -1,0 +1,30 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - main  # Defina as branches nas quais o workflow será executado
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+      
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Use a última versão do Ubuntu
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3  # Baixa o código do repositório
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2  # Instala o Flutter no ambiente
+        with:
+          flutter-version: 'stable'  # Você pode especificar outra versão se preferir
+
+      - name: Install dependencies
+        run: flutter pub get  # Baixa as dependências do projeto
+
+      - name: Run tests
+        run: flutter test  # Executa os testes do Flutter
