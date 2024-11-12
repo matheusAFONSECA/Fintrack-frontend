@@ -1,3 +1,4 @@
+![Build Status](https://github.com/LauraPivoto/projeto-c214/actions/workflows/flutter.yml/badge.svg)
 ![Flutter](https://img.shields.io/badge/language-Flutter-blue)
 
 # Projeto C214
@@ -6,20 +7,14 @@ This project is dedicated to running a Flutter application designed to assist us
 
 ## Index
 
-1. [Configuration of Project](#configuration-of-project)
+1. [Flutter Installation](#flutter-installation)
 
-2. [Flutter Installation](#flutter-installation)
+2. [Running the Application](#running-the-application)
 
-3. [Running the Application](#running-the-application)
+3. [Running Tests](#running-tests)
 
-4. [Running Tests](#running-tests)
+4. [Contributors](#contributors)
 
-5. [Contributors](#contributors)
-
-
----
-
-## Configuration of Project
 
 ---
 
