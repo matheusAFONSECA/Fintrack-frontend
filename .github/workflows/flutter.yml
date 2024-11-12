@@ -26,17 +26,23 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Install HTML test reporter
-        run: flutter pub add flutter_html_test_reporter
+      - name: Install junitreport
+        run: dart pub global activate junitreport
 
-      - name: Run tests with HTML report
-        run: flutter test --reporter html --output test_report.html
+      - name: Run tests with JUnit report
+        run: flutter test --machine | dart pub global run junitreport:tojunit --output report.xml
 
-      - name: Upload test results
+      - name: Install junit2html
+        run: pip install junit2html
+
+      - name: Convert JUnit XML to HTML
+        run: junit2html report.xml report.html
+
+      - name: Upload HTML test report
         uses: actions/upload-artifact@v3
         with:
           name: test-report
-          path: test_report.html
+          path: report.html
 
   build:
     runs-on: ubuntu-latest
