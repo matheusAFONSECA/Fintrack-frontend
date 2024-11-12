@@ -26,9 +26,11 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Install junitreport for JUnit XML output
+        run: dart pub global activate junitreport
+
       - name: Run tests with JUnit report
-        run: flutter test --machine | tojunit --output report.xml
-        continue-on-error: true
+        run: flutter test --machine | dart pub global run junitreport:tojunit --output report.xml
 
       - name: Upload test results
         uses: actions/upload-artifact@v3
