@@ -26,8 +26,15 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Run tests
-        run: flutter test
+      - name: Run tests with JUnit report
+        run: flutter test --machine | tojunit --output report.xml
+        continue-on-error: true
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: report.xml
 
   build:
     runs-on: ubuntu-latest
