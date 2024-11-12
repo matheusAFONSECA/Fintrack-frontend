@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:projeto_c214/Model/user.dart';
-import 'package:projeto_c214/Model/userLogin.dart';
-import 'package:projeto_c214/services/tokenStorage.dart';
+import 'package:Fintrack/Model/user.dart';
+import 'package:Fintrack/Model/userLogin.dart';
+import 'package:Fintrack/services/tokenStorage.dart';
 
 class UserService {
   final String apiUrl = "https://fintrack-api.vercel.app/";

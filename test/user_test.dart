@@ -1,7 +1,7 @@
 // test/user_test.dart
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:projeto_c214/Model/user.dart';
+import 'package:Fintrack/Model/user.dart';
 
 void main() {
   group('User', () {
