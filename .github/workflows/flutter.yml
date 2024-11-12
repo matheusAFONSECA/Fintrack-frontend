@@ -1,0 +1,64 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.4'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Install junitreport
+        run: dart pub global activate junitreport
+
+      - name: Run tests with JUnit report
+        run: flutter test --machine | dart pub global run junitreport:tojunit --output report.xml
+
+      - name: Install junit2html
+        run: pip install junit2html
+
+      - name: Convert JUnit XML to HTML
+        run: junit2html report.xml report.html
+
+      - name: Upload HTML test report
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: report.html
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.4'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK (Android)
+        run: flutter build apk --release

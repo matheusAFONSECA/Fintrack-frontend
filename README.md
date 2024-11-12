@@ -8,16 +8,35 @@ This project is dedicated to running a Flutter application designed to assist us
 
 1. [Configuration of Project](#configuration-of-project)
 
-2. [Running the Application](#running-the-application)
+2. [Flutter Installation](#flutter-installation)
 
-3. [Running Tests](#running-tests)
+3. [Running the Application](#running-the-application)
 
-4. [Contributors](#contributors)
+4. [Running Tests](#running-tests)
+
+5. [Contributors](#contributors)
 
 
 ---
 
 ## Configuration of Project
+
+---
+
+## Flutter Installation
+To set up this project, you first need to install Flutter on your computer. Follow the instructions on the official Flutter website by clicking [here](https://docs.flutter.dev/get-started/install) to download and install Flutter.
+
+After installing Flutter, add the Flutter SDK to your system's environment variables to make Flutter commands available in the terminal.
+
+On Windows: add the path `C:\src\flutter\bin` to the PATH environment variable.
+
+On macOS or Linux: add the following line to your `.bashrc` or `.zshrc` file:
+
+```bash
+export PATH="$PATH:`flutter/bin`"
+```
+
+Once you've completed the Flutter installation and setup, proceed to run the project.
 
 ---
 
